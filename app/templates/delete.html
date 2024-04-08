@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Curd</title>
+</head>
+<body>
+    <h1>Delete Curd</h1>
+    <p>Are you sure you want to delete '{{ curd.name }}'?</p>
+    <form action="{{ url_for('delete_curd', id=curd.id) }}" method="post">
+        <input type="submit" value="Delete">
+    </form>
+</body>
+</html>

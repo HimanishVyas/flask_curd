@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Curd</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles_edit.css') }}">
+</head>
+<body>
+    <h1>Edit Curd</h1>
+    <form action="{{ url_for('edit_curd', id=curd.id) }}" method="post">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" value="{{ curd.name }}" required>
+        </div>
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" required>{{ curd.description }}</textarea>
+        </div>
+        <div class="button-container">
+            <input type="submit" value="Update" class="button">
+            <a href="{{ url_for('index') }}" class="button">Cancel</a>
+        </div>
+    </form>
+</body>
+</html>

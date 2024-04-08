@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curd App</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>List of Curds</h1>
+    <ul>
+        {% for curd in curds %}
+        <li>{{ curd.name }} - {{ curd.description }}
+            <div class="button-container">
+                <a class="button" href="{{ url_for('edit_curd', id=curd.id) }}">Update</a>
+                <a class="button" href="{{ url_for('delete_curd', id=curd.id) }}">Delete</a>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+    <div class="button-container">
+        <a class="button" href="{{ url_for('add_curd') }}">Create</a>
+    </div>
+</body>
+</html>
+
